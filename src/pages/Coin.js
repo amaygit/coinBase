@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import Info from "../components/CoinPage/Info";
-// import LineChart from "../components/CoinPage/LineChart";
-// import SelectDays from "../components/CoinPage/SelectDays";
-// import ToggleComponents from "../components/CoinPage/ToggleComponent";
+import Info from "../components/CoinPage/Info";
+import LineChart from "../components/CoinPage/LineChart";
+import SelectDays from "../components/CoinPage/SelectDays";
+import ToggleComponents from "../components/CoinPage/ToggleComponent";
 import Button from "../components/Common/Button";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
@@ -68,17 +68,17 @@ function Coin() {
           <List coin={coin} delay={0.5} />
         </div>
         <div className="grey-wrapper">
-          {/* <SelectDays handleDaysChange={handleDaysChange} days={days} /> */}
-          {/* <ToggleComponents
+          <SelectDays handleDaysChange={handleDaysChange} days={days} />
+          <ToggleComponents
             priceType={priceType}
             handlePriceTypeChange={handlePriceTypeChange}
-          /> */}
-          {/* <LineChart chartData={chartData} /> */}
+          />
+          <LineChart chartData={chartData} />
         </div>
-        {/* <Info title={coin.name} desc={coin.desc} /> */}
+        <Info title={coin.name} desc={coin.desc} />
       </>
     ) : error ? (
-      <div>
+      <div>   
         <h1 style={{ textAlign: "center" }}>
           Sorry, Couldn't find the coin you're looking for 😞
         </h1>

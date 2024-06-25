@@ -6,9 +6,9 @@ import { convertNumber } from "../../../functions/convertNumber";
 import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
-// import { saveItemToWatchlist } from "../../../functions/saveItemToWatchlist";
+import { saveItemToWatchlist } from "../../../functions/saveItemToWatchlist";
 import StarIcon from "@mui/icons-material/Star";
-// import { removeItemToWatchlist } from "../../../functions/removeItemToWatchlist";
+import { removeItemToWatchlist } from "../../../functions/removeItemToWatchlist";
 
 function List({ coin, delay }) {
   const watchlist = JSON.parse(localStorage.getItem("watchlist"));
@@ -91,10 +91,10 @@ function List({ coin, delay }) {
           onClick={(e) => {
             if (isCoinAdded) {
               // remove coin
-            //   removeItemToWatchlist(e, coin.id, setIsCoinAdded);
+              removeItemToWatchlist(e, coin.id, setIsCoinAdded);
             } else {
               setIsCoinAdded(true);
-            //   saveItemToWatchlist(e, coin.id);
+              saveItemToWatchlist(e, coin.id);
             }
           }}
         >

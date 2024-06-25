@@ -6,6 +6,7 @@ import Loader from "../components/Common/Loader";
 import Search from "../components/Dashboard/Search";
 import TopButton from "../components/Common/TopButton";
 import PaginationComponent from "../components/Dashboard/Pagination";
+import Footer from '../components/Common/Footer/footer';
 const Dashboard = () => {
     const [coins, setCoins] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -75,6 +76,7 @@ const Dashboard = () => {
         </>
       )}
         <TopButton />
+        <Footer />
     </>
   )
 }

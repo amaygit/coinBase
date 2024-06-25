@@ -37,7 +37,7 @@ export const settingChartData = (setChartData, prices1, prices2) => {
           borderWidth: 1,
           fill: true,
           backgroundColor: "rgba(58, 128, 233,0.1)",
-          tension: 0.25,
+          tension: .25,
           borderColor: "#3a80e9",
           pointRadius: 0,
           yAxisID: "crypto1",

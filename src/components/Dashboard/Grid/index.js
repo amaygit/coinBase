@@ -3,17 +3,18 @@ import "./styles.css";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import { motion } from "framer-motion";
-// import StarOutlineIcon from "@mui/icons-material/StarOutline";
-// import { saveItemToWatchlist } from "../../../functions/saveItemToWatchlist";
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import { saveItemToWatchlist } from "../../../functions/saveItemToWatchlist";
 import StarIcon from "@mui/icons-material/Star";
-// import { removeItemToWatchlist } from "../../../functions/removeItemToWatchlist";
+import { Link } from "react-router-dom";
+import { removeItemToWatchlist } from "../../../functions/removeItemToWatchlist";
 
 function Grid({ coin, delay }) {
   const watchlist = JSON.parse(localStorage.getItem("watchlist"));
   const [isCoinAdded, setIsCoinAdded] = useState(watchlist?.includes(coin.id));
 
   return (
-    <a href={`/coin/${coin.id}`}>
+    <Link to={`/coin/${coin.id}`}>
       <motion.div
         className={`grid ${coin.price_change_percentage_24h < 0 && "grid-red"}`}
         initial={{ opacity: 0, y: 50 }}
@@ -35,14 +36,14 @@ function Grid({ coin, delay }) {
                 if (isCoinAdded) {
                   // remove coin
 
-                //   removeItemToWatchlist(e, coin.id, setIsCoinAdded);
+                  removeItemToWatchlist(e, coin.id, setIsCoinAdded);
                 } else {
                   setIsCoinAdded(true);
-                  // saveItemToWatchlist(e, coin.id);
+                  saveItemToWatchlist(e, coin.id);
                 }
               }}
             >
-              {/* {isCoinAdded ? <StarIcon /> : <StarOutlineIcon />} */}
+              {isCoinAdded ? <StarIcon /> : <StarOutlineIcon />}
             </div>
           </div>
         </div>
@@ -81,7 +82,7 @@ function Grid({ coin, delay }) {
           Market Capital : ${coin.market_cap.toLocaleString()}
         </p>
       </motion.div>
-    </a>
+    </Link>
   );
 }
 

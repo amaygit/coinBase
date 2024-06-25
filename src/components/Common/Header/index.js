@@ -40,8 +40,9 @@ const Header = () => {
     
   return (
     <div className='header'>
+        
          <h1>
-        Amay Crypto <span style={{ color: "var(--blue)" }}>.</span>
+        <Link to="/"> Amay Crypto <span style={{ color: "var(--blue)" }}>.</span></Link>
       </h1>
       <div className="links">
       <Switch checked={darkMode} onClick={() => changeMode()} />

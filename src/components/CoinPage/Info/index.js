@@ -3,9 +3,9 @@ import "./styles.css";
 function Info({ title, desc }) {
   const shortDesc =
     desc.slice(0, 300) +
-    "<br/><p style='color:var(--grey);cursor:pointer;'>Read More...</p>";
+    "<br/><p style='color:var(--grey);cursor:pointer;'>Want To Read More...</p>";
   const longDesc =
-    desc + "<br/><p style='color:var(--grey);cursor:pointer;'>Read Less...</p>";
+    desc + "<br/><p style='color:var(--grey);cursor:pointer;'>Want To Read Less...</p>";
 
   const [toggle, setToggle] = useState(false);
 
@@ -13,6 +13,7 @@ function Info({ title, desc }) {
     <div className="grey-wrapper info-component">
       <h1>{title}</h1>
       <p
+    //   dangerously removes the anchor tag
         dangerouslySetInnerHTML={{
           __html: desc.length >= 300 ? (toggle ? longDesc : shortDesc) : desc,
         }}
