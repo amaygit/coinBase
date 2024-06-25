@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
-// import { convertNumber } from "../../../functions/convertNumber";
+import { convertNumber } from "../../../functions/convertNumber";
 import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
@@ -83,7 +83,7 @@ function List({ coin, delay }) {
             ${coin.market_cap.toLocaleString()}
           </td>
         </Tooltip>
-        {/* <td className="coin-name mobile">${convertNumber(coin.market_cap)}</td> */}
+        <td className="coin-name mobile">${convertNumber(coin.market_cap)}</td>
         <td
           className={`watchlist-icon ${
             coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
